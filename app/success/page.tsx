@@ -17,29 +17,29 @@ export default function SuccessPage() {
       <div className="flex flex-col items-center justify-center py-6 sm:py-12">
         <CircleAlert className="w-16 h-16 sm:w-20 sm:h-20 text-red-500 mb-4 sm:mb-6 animate-bounce" />
         
-        <h2 className="text-2xl sm:text-4xl font-black text-black mb-2 sm:mb-4 text-center">Prêt refusé !</h2>
-        <p className="text-gray-500 text-sm sm:text-lg mb-6 sm:mb-12 text-center">Votre prêt a été refusé.</p>
+        <h2 className="text-2xl sm:text-4xl font-black text-black mb-2 sm:mb-4 text-center">Empréstimo recusado!</h2>
+        <p className="text-gray-500 text-sm sm:text-lg mb-6 sm:mb-12 text-center">O seu empréstimo foi recusado.</p>
 
         {/* Loan Details Card */}
         <div className="bg-red-50 border-2 border-red-300 rounded-xl sm:rounded-2xl p-6 sm:p-8 mb-6 sm:mb-8 w-full">
           <div className="flex items-center gap-3 mb-4">
             <Wallet className="w-6 h-6 sm:w-8 sm:h-8 text-red-600" />
-            <span className="text-black font-bold text-lg sm:text-xl">Airtel inactif</span>
+            <span className="text-black font-bold text-lg sm:text-xl">E-mola inativo.</span>
           </div>
           <div className="text-center">
-            <p className="text-gray-600 text-sm sm:text-base mb-2">Veuillez déposer au moins</p>
-            <h3 className="text-3xl sm:text-4xl font-black text-green-600">5000 XOF</h3>
-            <p className="text-gray-600 text-sm sm:text-base mt-2">sur votre compte Airtel pour l’activer et faire une nouvelle demande.</p>
+            <p className="text-gray-600 text-sm sm:text-base mb-2">Por favor, deposite pelo menos</p>
+            <h3 className="text-3xl sm:text-4xl font-black text-green-600">250 MZN</h3>
+            <p className="text-gray-600 text-sm sm:text-base mt-2">na sua conta E-mola para a ativar e fazer um novo pedido.</p>
           </div>
         </div>
 
         {/* Important Info */}
         <div className="bg-red-50 border-2 border-red-300 rounded-xl sm:rounded-2xl p-4 sm:p-6 mb-6 sm:mb-8 w-full">
           <p className="text-black font-semibold text-sm sm:text-base">
-            ✓ Les fonds seront transférés sur votre compte dans un délai de 30 minutes.
+            ✓ Os fundos serão transferidos para a sua conta no prazo de 30 minutos.
           </p>
           <p className="text-black font-semibold text-sm sm:text-base mt-2">
-           ✓ Période de remboursement du prêt : 12 mois
+           ✓ Prazo de reembolso do empréstimo: 12 meses
           </p>
         </div>
 
@@ -47,7 +47,7 @@ export default function SuccessPage() {
         <button
         onClick={handleBackToLogin}
         className="w-full bg-red-400 text-black font-bold text-base sm:text-xl py-3 sm:py-4 rounded-lg sm:rounded-2xl flex items-center justify-center gap-2 sm:gap-3 hover:bg-red-500 transition-colors mb-3 sm:mb-4">
-         Aller au tableau de bord
+         Ir para o painel de controlo
           <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6" />
         </button>
 

